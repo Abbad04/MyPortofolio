@@ -1,0 +1,539 @@
+body {
+    background: linear-gradient(-45deg, #7BD3EA, #F6F7C4);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    transition: background 1s ease, color 1s ease;
+    color: #0F4C75;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    /* height: calc(90vh - 60px); Adjusting for navbar height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    transition: color 1s ease;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    transition: background 1s ease, color 1s ease;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: color 1s ease;
+}
+
+.nav-left ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-left ul li a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-left ul li a:hover {
+    color: green;
+}
+
+.nav-left ul li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: inherit;
+    transition: background-color 0.3s ease;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 60px; /* Added margin to ensure it stays within the viewport */
+}
+
+#visualMode {
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.intro{
+    margin-top: 250px;
+    margin-bottom: 70px;
+}
+
+.intro h1 {
+    font-size: 90px;
+    color: inherit;
+    margin: 0 auto;
+    padding: 0;
+    animation: fadeIn 2s ease-in-out;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    transition: color 1s ease;
+}
+
+.intro p {
+    color: inherit;
+    animation: fadeIn 2s ease-in-out;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 40px 0 0 0;
+    transition: color 1s ease;
+}
+
+.work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.work-section {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.work-item {
+    width: 200px;
+    height: 200px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 55px;
+    font-family: "Dosis", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: black;
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.work-item1 {
+    background-color: #FF6F61;
+    width: 550px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-item1 img {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 140px;
+    top: 40px;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.work-item1 h2 {
+    position: absolute;
+    left: 40px;  /* Adjusted initial position */
+    top: 20px;   /* Adjusted initial position */
+    transition: top 1s ease, left 1s ease, transform 1s ease;  /* Added transform transition */
+}
+
+.work-item1 .hover-text {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 80%;
+    text-align: center;
+}
+
+.work-item1:hover {
+    background-color: #FF8B7D;
+}
+
+.work-item1:hover img {
+    transform: translate(200px, 200px);
+    opacity: 0;
+}
+
+.work-item1:hover .hover-text {
+    opacity: 1;
+}
+
+.work-item1:hover h2 {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.work-item2 {
+    background-color: #6B5B95;
+    width: 850px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-item2 img {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    transform: translate(-50%, 0);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.work-item2 h2 {
+    position: absolute;
+    left: 40px;  /* Adjusted initial position */
+    top: 20px;   /* Adjusted initial position */
+    transition: top 1s ease, left 1s ease, transform 1s ease;  /* Added transform transition */
+}
+
+.work-item2 .hover-text {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 80%;
+    text-align: center;
+}
+
+.work-item2:hover {
+    background-color: #8371AB;
+}
+
+.work-item2:hover img {
+    transform: translate(-50%, 200px);
+    opacity: 0;
+}
+
+.work-item2:hover .hover-text {
+    opacity: 1;
+}
+
+.work-item2:hover h2 {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+#work2 {
+    margin: 120px 0 0 0;
+}
+
+.work-item3 {
+    background-color: #88B04B;
+    width: 850px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-item3 img {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 120px;
+    transform: translate(-50%, 0);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.work-item3 h2 {
+    position: absolute;
+    left: 40px;  /* Adjusted initial position */
+    top: 20px;   /* Adjusted initial position */
+    transition: top 1s ease, left 1s ease, transform 1s ease;  /* Added transform transition */
+}
+
+.work-item3 .hover-text {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 80%;
+    text-align: center;
+}
+
+.work-item3:hover {
+    background-color: #A0C764;
+}
+
+.work-item3:hover img {
+    transform: translate(-50%, 200px);
+    opacity: 0;
+}
+
+.work-item3:hover .hover-text {
+    opacity: 1;
+}
+
+.work-item3:hover h2 {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+
+.work-item4 {
+    background-color: #F7CAC9;
+    width: 550px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.work-item4 img {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    left: 140px;
+    top: 40px;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.work-item4 h2 {
+    position: absolute;
+    left: 40px;  /* Adjusted initial position */
+    top: 20px;   /* Adjusted initial position */
+    transition: top 1s ease, left 1s ease, transform 1s ease;  /* Added transform transition */
+}
+
+.work-item4 .hover-text {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    width: 80%;
+    text-align: center;
+}
+
+.work-item4:hover {
+    background-color: #F8D4D3;
+}
+
+.work-item4:hover img {
+    transform: translate(200px, 200px);
+    opacity: 0;
+}
+
+.work-item4:hover .hover-text {
+    opacity: 1;
+}
+
+.work-item4:hover h2 {
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.about{
+    margin-top: 200px;
+}
+
+.about h1 {
+    font-size: 90px;
+    color: inherit;
+    margin: 0 auto;
+    padding: 0;
+    animation: fadeIn 2s ease-in-out;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    transition: color 1s ease;
+}
+
+.about p {
+    color: inherit;
+    animation: fadeIn 2s ease-in-out;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    margin: 40px 0 0 0;
+    transition: color 1s ease;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:flex-start;
+    margin-top: 75px;
+}
+
+.content img{
+    width: 275px;
+    height: 333px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+}
+
+.content div{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content h2{
+    text-align: left;
+    margin: 0;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 50px;
+}
+
+.content p{
+    text-align: left;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    background-color: #A1E0F0;
+    border-radius: 25px;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+
+.history div{
+    width: 65%;
+    text-align: left;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.destination{
+    display: flex;
+    flex-direction: row;;
+}
+
+.giza{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.uae{
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.contact{
+    width: 75%;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px;
+}
+
+.contact a {
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    color: inherit; /* Inherit color to switch based on mode */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: green;
+}
+
+.contact i {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.fab img{
+    width: 20px;
+    height: 20px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
